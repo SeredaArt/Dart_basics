@@ -2,7 +2,6 @@ import 'dart:math';
 
 void main() {
 
-  int test = 0;
   DelimetersCalc nod = DelimetersCalc();
   int result = nod.gcdRun(450, 678);
   print("НОД равен: $result");
