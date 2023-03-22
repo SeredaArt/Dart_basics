@@ -1,7 +1,7 @@
 void main() {
 
   List<String> list = ['car', 'cat', 'dog', 'cat', 'mail', 'phone', 'apple', 'mail', 'cat'];
-  var outMap = <String, int>{};
+  Map outMap = <String, int>{};
   outMap = WordInText().runCalcWords(list);
   print(outMap);
 
@@ -11,7 +11,7 @@ class WordInText {
 
   var outMap = <String, int>{};
 
-  runCalcWords(Iterable<String> txt) {
+  Map runCalcWords(Iterable<String> txt) {
 
     for (var element in txt) {
       if (outMap.containsKey(element)) {

@@ -37,24 +37,24 @@ class GeneralUser extends User{
 }
 
 mixin MailSystem on User {
-  getMailSystem(){
+  String getMailSystem(){
     return email.split('@')[1];
   }
 }
 
 class UserManager<T extends User>{
 
-  List users = [];
+  List <T> users = [];
 
-  add(T){
+  void add(T){
     users.add(T);
   }
 
-  del(T){
+  void del(T){
     users.remove(T);
   }
 
-  usersMails() {
+  void usersMails() {
 
     for (var elements in users) {
       if (elements is AdminUser) {

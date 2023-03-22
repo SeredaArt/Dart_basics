@@ -32,7 +32,7 @@ class Point {
 
   }
 
-  distanceTo(Point another) {
+  num distanceTo(Point another) {
     num d = sqrt(
         pow(another.x - x, 2) + pow(another.y - y, 2) + pow(another.y - y, 2));
     return d;

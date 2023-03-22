@@ -1,9 +1,10 @@
 void main() {
-  num sqrtN = 0;
-  sqrtN.calcSqrtN(32, 5);
-  sqrtN.calcSqrtN(246, 4);
-  sqrtN.calcSqrtN(156.7, 7);
-  sqrtN.calcSqrtN(-567, 4);
+
+  32.calcSqrtN(5);
+  246.calcSqrtN(4);
+  157.7.calcSqrtN(7);
+  567.calcSqrtN(4);
+
 }
 
 extension SqrtN on num{
@@ -12,18 +13,18 @@ extension SqrtN on num{
     return m = m<0? -m : m;
   }
 
-  void calcSqrtN(double a, double n)
-  {
-    if ((a < 0) & (n%2==0))  {
+  void calcSqrtN (double n)
+    {
+    if ((this < 0) & (n%2==0))  {
       throw('Из отрицательных чисел корень четной степени не существует.');
     }
-
+    num a = this;
     double acc = 0.00001;
     double root = a/n;
-    double rn = a;
+    double rn = a.toDouble();
     int i = 0;
     while(invert(root - rn) >= acc) {
-      rn = a;
+      rn = a.toDouble();
       for(int j = 1; j < n; j++){
         rn = rn / root;
       }

@@ -7,11 +7,11 @@ void main() {
 
 class IntInString {
 
-  intInText(String txt) {
+  List intInText(String txt) {
     Iterable<String> arrayText = txt.split(' ');
     List arrayInt = [];
     for (var element in arrayText) {
-      num? isInt = int.tryParse(element);
+      num? isInt = num.tryParse(element);
       if (isInt != null) {
         arrayInt.add(isInt);
       }

@@ -11,7 +11,7 @@ class WordToInt {
 
   Set outSet = {};
 
-  toInt(Iterable<String> txt) {
+  Set toInt(Iterable<String> txt) {
     for (var element in txt) {
       if (mapIntWord.containsKey(element)) {
         int valueWord = mapIntWord[element]!;
