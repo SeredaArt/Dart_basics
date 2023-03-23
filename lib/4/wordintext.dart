@@ -11,7 +11,7 @@ class WordInText {
 
   var outMap = <String, int>{};
 
-  Map runCalcWords(Iterable<String> txt) {
+  Map <String, int> runCalcWords(Iterable<String> txt) {
 
     for (var element in txt) {
       if (outMap.containsKey(element)) {

@@ -1,22 +1,22 @@
 void main() {
 
   DelimetersCalc nod = DelimetersCalc();
-  int result = nod.gcdRun(450, 678);
+  int result = nod.gcdRun(-450, 678);
   print("НОД равен: $result");
 
-  double resultLcm = nod.lcmRun(450, 678);
+  int resultLcm = nod.lcmRun(450, 678);
   print("НОК равен: $resultLcm");
 
-  nod.calcSimples(168);
-  nod.calcSimples(978);
+  List answer = nod.calcSimples(168);
+  print(answer);
 }
 
 class DelimetersCalc {
 
   int gcdRun(int a, int b) {
 
-    if (a % 1 != 0 || b % 1 != 0) {
-      throw('НОД вычисляется только для натуральных чисел.');
+    if (a < 0 || b < 0) {
+      throw ArgumentError('НОД вычисляется только для натуральных чисел.', 'Ошибка!');
     }
 
     while (b != 0) {
@@ -27,23 +27,26 @@ class DelimetersCalc {
     return a.abs();
   }
 
-  double lcmRun(int a, int b) {
+  int lcmRun(int a, int b) {
     if (a % 1 != 0 || b % 1 != 0) {
       throw('НОК вычисляется только для натуральных чисел.');
     }
 
-    return a / gcdRun(a, b) * b;
+    return a ~/ gcdRun(a, b) * b;
   }
 
-  dynamic calcSimples(int a){
+  List calcSimples(int a){
+    List<int> result = [];
+
     if (intSimple(a)) {
       print('$a является простым числом');
-      return false;
+      result.add(a);
+      return result;
     }
 
     a = a.abs();
     var d = 2;
-    List<int> result = [];
+
 
     while (a > 1) {
       while (a % d == 0) {
@@ -60,7 +63,7 @@ class DelimetersCalc {
         d += 2;
     }
 
-    print(result.join(' * '));
+    return result;
   }
 
   bool intSimple(int a) {

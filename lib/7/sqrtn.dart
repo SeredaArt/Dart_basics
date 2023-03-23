@@ -4,7 +4,7 @@ void main() {
   246.calcSqrtN(4);
   157.7.calcSqrtN(7);
   567.calcSqrtN(4);
-
+  (-27).calcSqrtN(3);
 }
 
 extension SqrtN on num{
@@ -15,7 +15,7 @@ extension SqrtN on num{
 
   void calcSqrtN (double n)
     {
-    if ((this < 0) & (n%2==0))  {
+    if ((this < 0) && (n%2==0))  {
       throw('Из отрицательных чисел корень четной степени не существует.');
     }
     num a = this;

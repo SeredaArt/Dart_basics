@@ -1,19 +1,19 @@
 void main() {
-
-  List resultInt = IntInString().intInText('car 1 3344 1000 dog 6 7 cat 9 0 *');
-  print(resultInt);
-
+  List <num>? arrayInt = [];
+  arrayInt = NumInString().numInText('car 1 3344 1000 dog 6 7 cat 9 0 *');
+  print(arrayInt);
 }
 
-class IntInString {
 
-  List intInText(String txt) {
+class NumInString {
+
+  List <num>? numInText(String txt) {
     Iterable<String> arrayText = txt.split(' ');
-    List arrayInt = [];
+    List <num>? arrayInt = [];
     for (var element in arrayText) {
-      num? isInt = num.tryParse(element);
-      if (isInt != null) {
-        arrayInt.add(isInt);
+      num? isNum= num.tryParse(element);
+      if (isNum != null) {
+        arrayInt.add(isNum);
       }
     }
     return arrayInt;

@@ -46,12 +46,12 @@ class UserManager<T extends User>{
 
   List <T> users = [];
 
-  void add(T){
-    users.add(T);
+  void add(user){
+    users.add(user);
   }
 
-  void del(T){
-    users.remove(T);
+  void del(user){
+    users.remove(user);
   }
 
   void usersMails() {
