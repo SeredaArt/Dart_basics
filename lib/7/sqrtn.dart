@@ -16,7 +16,7 @@ extension SqrtN on num{
   void calcSqrtN (double n)
     {
     if ((this < 0) && (n%2==0))  {
-      throw('Из отрицательных чисел корень четной степени не существует.');
+      throw(ArgumentError('Из отрицательных чисел корень четной степени не существует.'));
     }
     num a = this;
     double acc = 0.00001;
