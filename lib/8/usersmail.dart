@@ -41,7 +41,7 @@ class UserManager<T extends User> {
   List<T> users = [];
 
   void add({required User user}) {
-    users.add(T as T);
+    users.add(user as T);
   }
 
   void del({required User user}) {
