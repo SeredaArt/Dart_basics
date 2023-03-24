@@ -19,8 +19,11 @@ void main() {
 
 class User {
   final String email;
-
   User(this.email);
+
+  factory User.defaultUser() {
+    return User('user');
+  }
 }
 
 class AdminUser extends User with MailSystem {
@@ -44,7 +47,7 @@ class UserManager<T extends User> {
     users.add(user as T);
   }
 
-  void del({required User user}) {
+  void del({user = User}) {
     users.remove(user);
   }
 
