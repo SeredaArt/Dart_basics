@@ -45,7 +45,7 @@ class UserManager<T extends User> {
   }
 
   void del({required User user}) {
-    users.remove(user as T);
+    users.remove(user);
   }
 
   void usersMails() {
