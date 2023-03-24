@@ -47,7 +47,7 @@ class UserManager<T extends User> {
     users.add(user as T);
   }
 
-  void del({user = User}) {
+  void del({required User user}) {
     users.remove(user);
   }
 
