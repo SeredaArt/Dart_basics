@@ -1,66 +1,58 @@
 void main() {
-
   final first = User('user@mail.ru');
   //print(first.email);
-  final admin  = AdminUser('admin@mail.ru');
+  final admin = AdminUser('admin@mail.ru');
   //print(admin.getMailSystem());
   final generalUser = GeneralUser('generic@yandex.ru');
   //print(generalUser.email);
 
   final userManager = UserManager();
-  userManager.add(first);
-  userManager.add(admin);
-  userManager.add(generalUser);
+  userManager.add(user: first);
+  userManager.add(user: admin);
+  userManager.add(user: generalUser);
 
   userManager.usersMails();
 
-  userManager.del(first);
+  userManager.del(user: first);
   userManager.usersMails();
 }
 
-class User{
+class User {
   final String email;
 
   User(this.email);
 }
 
-class AdminUser extends User with MailSystem{
-
+class AdminUser extends User with MailSystem {
   AdminUser(String email) : super(email);
-
 }
 
-class GeneralUser extends User{
-
+class GeneralUser extends User {
   GeneralUser(String email) : super(email);
-
 }
 
 mixin MailSystem on User {
-  String getMailSystem(){
+  String getMailSystem() {
     return email.split('@')[1];
   }
 }
 
-class UserManager<T extends User>{
+class UserManager<T extends User> {
+  List<T> users = [];
 
-  List <T> users = [];
-
-  void add(user){
-    users.add(user);
+  void add({required User user}) {
+    users.add(T as T);
   }
 
-  void del(user){
-    users.remove(user);
+  void del({required User user}) {
+    users.remove(user as T);
   }
 
   void usersMails() {
-
     for (var elements in users) {
       if (elements is AdminUser) {
         print(elements.getMailSystem());
-      }
-      else {
+      } else {
         print(elements.email);
       }
     }

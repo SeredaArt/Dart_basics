@@ -16,7 +16,6 @@ void main() {
 }
 
 class BinaryCalc {
-
   String toBin(int a) {
     int ost = 0;
     var result = "";
@@ -27,7 +26,7 @@ class BinaryCalc {
       b = b ~/ 2;
       result = ost.toString() + result;
     }
-    if (a<0) {
+    if (a < 0) {
       result = '-$result';
     }
 
@@ -43,11 +42,11 @@ class BinaryCalc {
     }
     int length = binary.length;
     int n = length;
-    for (int i = 0; i <= length-1; i++) {
-      n = n-1;
+    for (int i = 0; i <= length - 1; i++) {
+      n = n - 1;
       var last = int.tryParse(binary[n]);
-      dec =  last! * pow(2 , i) + dec;
+      dec = last! * pow(2, i) + dec;
     }
-    return dec = inv? -dec : dec;
+    return dec = inv ? -dec : dec;
   }
 }

@@ -1,5 +1,4 @@
 void main() {
-
   32.calcSqrtN(5);
   246.calcSqrtN(4);
   157.7.calcSqrtN(7);
@@ -7,25 +6,24 @@ void main() {
   (-27).calcSqrtN(3);
 }
 
-extension SqrtN on num{
-
-  double invert(double m){
-    return m = m<0? -m : m;
+extension SqrtN on num {
+  double invert(double m) {
+    return m = m < 0 ? -m : m;
   }
 
-  void calcSqrtN (double n)
-    {
-    if ((this < 0) && (n%2==0))  {
-      throw(ArgumentError('Из отрицательных чисел корень четной степени не существует.'));
+  double calcSqrtN(double n) {
+    if ((this < 0) && (n % 2 == 0)) {
+      throw (ArgumentError(
+          'Из отрицательных чисел корень четной степени не существует.'));
     }
     num a = this;
     double acc = 0.00001;
-    double root = a/n;
+    double root = a / n;
     double rn = a.toDouble();
     int i = 0;
-    while(invert(root - rn) >= acc) {
+    while (invert(root - rn) >= acc) {
       rn = a.toDouble();
-      for(int j = 1; j < n; j++){
+      for (int j = 1; j < n; j++) {
         rn = rn / root;
       }
       root = rn / n + root * (1.0 - 1.0 / n);
@@ -33,5 +31,6 @@ extension SqrtN on num{
     }
     print('Итерация $i');
     print('Корень $n-ой степени из $a=$root');
+    return root;
   }
 }

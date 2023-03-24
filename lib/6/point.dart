@@ -7,29 +7,22 @@ void main() {
 }
 
 class Point {
-
   final double x;
   final double y;
   final double z;
 
-  Point(this.x, this.y, this.z) ;
+  Point(this.x, this.y, this.z);
 
-  factory Point.zero()
-  {
+  factory Point.zero() {
     return Point(0, 0, 0);
-
   }
 
-  factory Point.vector()
-  {
+  factory Point.vector() {
     return Point(1, 1, 1);
-
   }
 
-  factory Point.five()
-  {
+  factory Point.five() {
     return Point(5, 5, 5);
-
   }
 
   num distanceTo(Point another) {
